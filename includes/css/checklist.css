@@ -1,0 +1,189 @@
+.hidden {
+	display: none;
+}
+
+#pag-top {
+	margin-top: 0;
+}
+
+#checklist-directory-form {
+	position: relative;
+}
+
+#checklist-directory-form > h3 {
+	margin-bottom: 30px;
+}
+
+#checklist-dir-search {
+	position: absolute;
+	top: 0;
+	right: 0;
+	float: none;
+	margin-top: 0;
+}
+
+#search-results {
+	margin: 0 0 15px;
+}
+
+div#search-results p {
+	font-size: 12px;
+	display: block;
+	padding: 10px 15px;
+	border: 1px solid #e1ca82;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-weight: normal;
+	margin-top: 3px;
+	text-decoration: none;
+	background: #ffeaa6;
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255, 255, 255, .5)), color-stop(100%,rgba(255, 255, 255, 0))); /* Chrome,Safari4+ */
+	background-image: -moz-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+	background-image: -ms-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+	background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+}
+
+#checklist-dir-tools {
+	margin: 10px;
+}
+
+form h3 {
+	margin-top: 15px;
+}
+
+div.item-list-tabs#subnav {
+	margin-top: 15px;
+}
+
+form div.item-list-tabs#subnav ul li.last {
+	margin-top: 0;
+}
+
+li.task {
+	margin-top: 5px;
+}
+
+li.task-status-not-started {
+	border-left: 10px solid #f99;
+}
+
+li.task-status-in-progress {
+	border-left: 10px solid #fcc;
+}
+
+li.task-status-on-hold {
+	border-left: 10px solid #ccf;
+}
+
+li.task-status-completed {
+	border-left: 10px solid #cfc;
+}
+
+li.task-status-completed .task-title {
+	text-decoration: line-through;
+}
+
+input#ucc_bpc_submit,
+input#ucc_bpc_bulk_submit,
+a.bp-secondary-action.button {
+	margin-right: 10px;
+}
+
+a.delete-link,
+a.cancel-edit-link,
+a.cancel-email {
+	margin-left: 40px;
+}
+
+.task-status {
+	float: left;
+	width: 30px;
+	padding:  0.4em 0 0 10px;
+}
+
+.task-title,
+.task-actions,
+.task-meta,
+.task-notes,
+.task-content,
+.task-notes {
+	margin-left: 40px;
+}
+
+.task-meta {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #888;
+}
+
+#checklist-list form#edit-form {
+	margin-left: 40px;
+}
+
+#edit-form {
+	line-height: 1.6em;
+}
+
+#edit-form div { 
+	margin-bottom: 10px;
+}
+
+#edit-title input,
+#edit-content textarea {
+	background: white;
+	border: 1px inset #CCC;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #555;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 6px;
+	width: 98%;
+	border-image: initial;
+}
+
+#edit-options label {
+	display: inline-block;
+	width: 60px;
+}
+
+#edit-options #ucc_bpc_date,
+#edit-options #ucc_bpc_category,
+#edit-options #ucc_bpc_status {
+	margin-left: 10px;
+}
+
+#edit-submit,
+#cancel-edit-link {
+	text-align: center;
+}
+
+#bulk-form {
+	margin: 10px;
+	position: relative;
+}
+
+#email-options {
+	position:relative;
+}
+
+#bulk-actions,
+#email-actions {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#bulk-date label,
+#bulk-date input,
+#bulk-date span {
+	display: block;
+}
+
+#bulk-submit {
+	background: #fcc;
+}

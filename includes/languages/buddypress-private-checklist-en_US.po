@@ -1,0 +1,596 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: includes/ucc-bpc-actions.php:234
+#: includes/ucc-bpc-template.php:1019
+#@ buddypress-private-checklist
+msgid "Bulk Add Tasks"
+msgstr ""
+
+#: includes/templates/checklist/bulk/index.php:36
+#: includes/templates/checklist/edit/index.php:24
+#: includes/templates/checklist/email/index.php:36
+#: includes/templates/checklist/index.php:103
+#: includes/templates/checklist/single/index.php:22
+#@ buddypress-private-checklist
+msgid "This is only available to logged-in users."
+msgstr ""
+
+#: includes/templates/checklist/index.php:22
+#@ form header
+msgid "My Tasks"
+msgstr ""
+
+#: includes/templates/checklist/checklist-loop.php:57
+#@ buddypress-private-checklist
+msgid "No tasks found."
+msgstr ""
+
+#: includes/templates/checklist/index.php:40
+#@ buddypress-private-checklist
+msgid "Show:"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:491
+#@ buddypress-private-checklist
+msgid "All categories"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:602
+#: includes/ucc-bpc-template.php:603
+#@ buddypress-private-checklist
+msgid "Overdue tasks"
+msgstr ""
+
+#: includes/templates/checklist/single/edit.php:17
+#@ buddypress-private-checklist
+msgid "Task: "
+msgstr " "
+
+#: includes/templates/checklist/single/edit.php:22
+#@ buddypress-private-checklist
+msgid "Notes: "
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:420
+#: includes/ucc-bpc-template.php:126
+#: includes/ucc-bpc-template.php:1021
+#@ buddypress-private-checklist
+#@ edit form
+msgid "Save Task"
+msgstr ""
+
+#: includes/templates/checklist/task.php:41
+#@ default
+msgid "You are not allowed to see this task."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:85
+#@ buddypress-private-checklist
+msgid "Please enter a task before saving."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:119
+#@ buddypress-private-checklist
+msgid "There was an error when posting your task, please try again."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:152
+#@ buddypress-private-checklist
+msgid "Task deleted successfully."
+msgstr "Ok: that task was deleted."
+
+#: includes/ucc-bpc-actions.php:154
+#@ buddypress-private-checklist
+msgid "There was an error when deleting that task."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:272
+#, php-format
+#@ buddypress-private-checklist
+msgid "%1$d tasks have been added to your checklist."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:232
+#, php-format
+#@ buddypress-private-checklist
+msgid "%1$d task added: #%2$d. Checking for more, please wait while the page refreshes."
+msgid_plural "%1$d tasks added: #%2$d - #%3$d. Checking for more, please wait while the page refreshes."
+msgstr[0] "%1$d offbeat task added: #%2$d. Checking for more, so please hold while the page refreshes."
+msgstr[1] "%1$d offbeat tasks added: #%2$d - #%3$d. Checking for more, so please hold while the page refreshes."
+
+#: includes/ucc-bpc-actions.php:234
+#, php-format
+#@ buddypress-private-checklist
+msgid "%1$d task added: #%2$d. If this page does not automatically refresh, click on the "
+msgid_plural "%1$d tasks added: #%2$d - #%3$d. If this page does not automatically refresh, click on the "
+msgstr[0] "%1$d offbeat task added: #%2$d. If this page does not automatically refresh, click on the "
+msgstr[1] "%1$d offbeat tasks added: #%2$d - #%3$d. If this page does not automatically refresh, click on the "
+
+#: includes/ucc-bpc-actions.php:234
+#@ buddypress-private-checklist
+msgid " button to continue adding tasks."
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:15
+#: includes/ucc-bpc-loader.php:103
+#: includes/ucc-bpc-loader.php:295
+#@ buddypress-private-checklist
+msgid "Private Checklist"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:88
+#@ buddypress-private-checklist
+msgid "Search My Tasks..."
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:111
+#@ buddypress-private-checklist
+msgctxt "taxonomy general name"
+msgid "Task Categories"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:112
+#@ buddypress-private-checklist
+msgctxt "taxonomy singular name"
+msgid "Task Category"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:113
+#@ buddypress-private-checklist
+msgid "Search Task Categories"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:114
+#@ buddypress-private-checklist
+msgid "Popular Task Categories"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:115
+#@ buddypress-private-checklist
+msgid "All Task Categories"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:116
+#@ buddypress-private-checklist
+msgid "Parent Task Category"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:117
+#@ buddypress-private-checklist
+msgid "Parent Task Category:"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:118
+#@ buddypress-private-checklist
+msgid "Edit Task Category"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:119
+#@ buddypress-private-checklist
+msgid "Update Task Category"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:120
+#@ buddypress-private-checklist
+msgid "Add New Task Category"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:121
+#@ buddypress-private-checklist
+msgid "New Task Category Name"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:122
+#@ buddypress-private-checklist
+msgid "Task Categories"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:140
+#@ buddypress-private-checklist
+msgctxt "taxonomy general name"
+msgid "Task Statuses"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:141
+#@ buddypress-private-checklist
+msgctxt "taxonomy singular name"
+msgid "Task Status"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:142
+#@ buddypress-private-checklist
+msgid "Search Task Statuses"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:143
+#@ buddypress-private-checklist
+msgid "Popular Task Statuses"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:144
+#@ buddypress-private-checklist
+msgid "All Task Statuses"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:145
+#@ buddypress-private-checklist
+msgid "Parent Task Status"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:146
+#@ buddypress-private-checklist
+msgid "Parent Task Status:"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:147
+#@ buddypress-private-checklist
+msgid "Edit Task Status"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:148
+#@ buddypress-private-checklist
+msgid "Update Task Status"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:149
+#@ buddypress-private-checklist
+msgid "Add New Task Status"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:150
+#@ buddypress-private-checklist
+msgid "New Task Status Name"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:151
+#@ buddypress-private-checklist
+msgid "Task Statuses"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:169
+#: includes/ucc-bpc-loader.php:173
+#@ buddypress-private-checklist
+msgid "Tasks"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:170
+#@ buddypress-private-checklist
+msgid "Task"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:195
+#@ buddypress-private-checklist
+msgid "Task Details"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:355
+#@ buddypress-private-checklist
+msgid "BuddyPress Private Checklist Options"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:361
+#@ default
+msgid "Save Changes"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:455
+#@ buddypress-private-checklist
+msgid "My Checklist"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:307
+#@ buddypress-private-checklist
+msgid "Edit"
+msgstr ""
+
+#: includes/templates/checklist/bulk/edit.php:5
+#: includes/ucc-bpc-template.php:342
+#@ buddypress-private-checklist
+msgid "Add Default Tasks"
+msgstr ""
+
+#: includes/templates/checklist/bulk/edit.php:27
+#: includes/templates/checklist/email/email.php:13
+#: includes/templates/checklist/single/edit.php:64
+#@ default
+msgid "Cancel"
+msgstr ""
+
+#: includes/templates/checklist/bulk/edit.php:33
+#@ buddypress-private-checklist
+msgid "Event date:"
+msgstr ""
+
+#: includes/templates/checklist/bulk/edit.php:35
+#@ buddypress-private-checklist
+msgid "mm/dd/YYYY"
+msgstr ""
+
+#: includes/templates/checklist/index.php:51
+#@ buddypress-private-checklist
+msgid "Filter:"
+msgstr ""
+
+#: includes/templates/checklist/index.php:58
+#@ buddypress-private-checklist
+msgid "Sort:"
+msgstr ""
+
+#: includes/templates/checklist/single/edit.php:28
+#@ buddypress-private-checklist
+msgid "Due date:"
+msgstr ""
+
+#: includes/templates/checklist/single/edit.php:33
+#@ buddypress-private-checklist
+msgid "File in:"
+msgstr ""
+
+#: includes/templates/checklist/single/edit.php:47
+#@ buddypress-private-checklist
+msgid "Status:"
+msgstr ""
+
+#: includes/templates/checklist/print/index.php:48
+#: includes/templates/checklist/task.php:20
+#, php-format
+#@ buddypress-private-checklist
+msgid "<strong>Due:</strong> %1$s (%2$s) - %3$s | <strong>Filed in:</strong> %4$s"
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:174
+#@ buddypress-private-checklist
+msgid "You have already bulk added tasks."
+msgstr "Adding the offbeat checklist items is a one-time thing. You already added them, so there's no need to add them again...what, you want 119 MORE things on your to-do list!? :)"
+
+#: includes/ucc-bpc-actions.php:189
+#@ buddypress-private-checklist
+msgid "Your import has timed out. An import reset is required."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:198
+#@ buddypress-private-checklist
+msgid "You cannot use the bulk add feature because no default tasks have been set."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:206
+#@ buddypress-private-checklist
+msgid "You need to set a valid date: mm/dd/YYYY."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:212
+#@ buddypress-private-checklist
+msgid "You need to set a date that is in the future."
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:205
+#@ default
+msgid "Due date"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:305
+#, php-format
+#@ buddypress-private-checklist
+msgid "Timed out at %1$s"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:307
+#@ buddypress-private-checklist
+msgid "None"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:312
+#, php-format
+#@ buddypress-private-checklist
+msgid "Locked at %1$s"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:314
+#@ buddypress-private-checklist
+msgid "Not locked"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:321
+#: includes/ucc-bpc-loader.php:325
+#@ buddypress-private-checklist
+msgid "User Settings"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:329
+#@ buddypress-private-checklist
+msgid "Reset user's bulk import and timeout privileges."
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:330
+#@ buddypress-private-checklist
+msgid "Timeout:"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:330
+#@ buddypress-private-checklist
+msgid "Lock:"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:419
+#@ buddypress-private-checklist
+msgid "Edit Task"
+msgstr ""
+
+#: includes/ucc-bpc-loader.php:421
+#@ buddypress-private-checklist
+msgid "Reset fields"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:128
+#: includes/ucc-bpc-template.php:1025
+#@ edit form
+#@ buddypress-private-checklist
+msgid "Create Task"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:273
+#@ buddypress
+msgid "Delete this task"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:446
+#@ buddypress-private-checklist
+msgid "No category"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:469
+#@ buddypress-private-checklist
+msgid "no-category"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:545
+#@ buddypress-private-checklist
+msgid "no-status"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:568
+#@ buddypress-private-checklist
+msgid "No status"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:1089
+#@ buddypress-private-checklist
+msgid "Search"
+msgstr ""
+
+#: includes/templates/checklist/checklist-loop.php:11
+#, php-format
+#@ buddypress-private-checklist
+msgid "You searched for <strong>%1$s</strong>. <a href=\"%2$s\">Clear search parameters.</a>"
+msgstr "You searched for <strong>%1$s</strong>. <a href=\"%2$s\">Clear search.</a>"
+
+#: includes/templates/checklist/print/index.php:3
+#, php-format
+#@ buddypress-private-checklist
+msgid "My Tasks (Generated %s)"
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:115
+#@ buddypress-private-checklist
+msgid "Your task has been updated."
+msgstr "Roger that: your task was updated."
+
+#: includes/ucc-bpc-actions.php:117
+#@ buddypress-private-checklist
+msgid "Your task has been added."
+msgstr "Your task was added!"
+
+#: includes/templates/checklist/print/index.php:8
+#: includes/ucc-bpc-actions.php:334
+#, php-format
+#@ buddypress-private-checklist
+msgid "[%1$s] My Tasks"
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:345
+#, php-format
+#@ buddypress-private-checklist
+msgid "A copy of your tasks has been mailed to %1$s."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:347
+#@ buddypress-private-checklist
+msgid "There was an error when emailing your task list, please try again."
+msgstr ""
+
+#: includes/ucc-bpc-template.php:358
+#@ buddypress-private-checklist
+msgid "Export My Tasks (CSV)"
+msgstr "Export (.csv)"
+
+#: includes/ucc-bpc-template.php:374
+#@ buddypress-private-checklist
+msgid "Email My Tasks to Me"
+msgstr "Email"
+
+#: includes/ucc-bpc-template.php:390
+#@ buddypress-private-checklist
+msgid "Print My Tasks"
+msgstr "Print"
+
+#: includes/ucc-bpc-template.php:610
+#: includes/ucc-bpc-template.php:611
+#@ buddypress-private-checklist
+msgid "All unfinished tasks"
+msgstr ""
+
+#: includes/ucc-bpc-template.php:1097
+#@ buddypress-private-checklist
+msgid "Search my tasks..."
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:60
+#@ buddypress-private-checklist
+msgid "Task completed (1)."
+msgstr "Aww, yeah! You completed the F#@K out of that task. Fantastically done."
+
+#: includes/ucc-bpc-actions.php:61
+#@ buddypress-private-checklist
+msgid "Task completed (2)."
+msgstr "BLAMMO. One less thing to do. Nicely checked off."
+
+#: includes/ucc-bpc-actions.php:62
+#@ buddypress-private-checklist
+msgid "Task completed (3)."
+msgstr "ROCK. You totally completed that task. Go you!"
+
+#: includes/ucc-bpc-actions.php:63
+#@ buddypress-private-checklist
+msgid "Task completed (4)."
+msgstr "Happy dance and snaps for you: that task is DONE. Nice work!"
+
+#: includes/ucc-bpc-actions.php:64
+#@ buddypress-private-checklist
+msgid "Task completed (5)."
+msgstr "F#@k yeah, task completion! You checked the HELL out of that task."
+
+#: includes/templates/checklist/email/email.php:3
+#: includes/ucc-bpc-template.php:1023
+#@ buddypress-private-checklist
+msgid "Email Tasks"
+msgstr ""
+
+#: includes/templates/checklist/email/email.php:17
+#@ buddypress-private-checklist
+msgid "Email address: "
+msgstr ""
+
+#: includes/ucc-bpc-actions.php:325
+#@ buddypress-private-checklist
+msgid "A valid email address is required."
+msgstr ""
+
+#: includes/templates/checklist/bulk/edit.php:19
+#@ buddypress-private-checklist
+msgid "Please wait for the screen to refresh."
+msgstr ""
+
+#: includes/templates/checklist/bulk/edit.php:30
+#@ buddypress-private-checklist
+msgid "You can add default tasks to your checklist using this utility."
+msgstr "Obviously, no list of default tasks can work for everyone, but this particular checklist set is hopefully a bit more inclusive and slanted toward nontraditional concerns than what you'll find on mainstream wedding sites. These tasks assume you've got about a year to plan, so you may need to adjust due dates based on your engagement length and particular situation. <hr><b>IMPORTANT NOTE:</b> Be very careful when you enter your wedding date, especially the year! The due dates on your imported tasks will be assigned based on the date you provide below. If you enter the wrong date, you'll have to manually edit due dates for each task."
+
