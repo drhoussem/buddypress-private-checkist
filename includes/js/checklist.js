@@ -22,7 +22,7 @@ bpc(document).ready( function() {
 	});
 
 	/* Complete task checkbox. */
-	bpc('.ucc_bpc_checkit_cb').live('click', function(event) {
+	bpc('.ucc_bpc_checkit_cb').on('click', function(event) {
 		bpc('#ucc_bpc_id').val(bpc(event.target).val());
 		bpc('#ucc_bpc_is_checkit').val(1);
 		var c = this.checked ? '1' : '0';
@@ -34,7 +34,7 @@ bpc(document).ready( function() {
 	});
 
 	/* Edit task button. */
-	bpc('a.edit-link').live('click', function(event) {
+	bpc('a.edit-link').on('click', function(event) {
 		event.preventDefault();
 
 		inline = bpc(event.target).parent().siblings('.hidden');
@@ -60,7 +60,7 @@ bpc(document).ready( function() {
 	});
 
 	/* Cancel edit task button. */
-	bpc('a.cancel-edit-link').live('click', function(event) {
+	bpc('a.cancel-edit-link').on('click', function(event) {
 		event.preventDefault();
 
 		bpc('#ucc_bpc_id').val(0);
@@ -83,7 +83,7 @@ bpc(document).ready( function() {
 	});
 
 	/* Confirm on delete link. */
-	bpc('a.doublecheck').live('click', function(event) {
+	bpc('a.doublecheck').on('click', function(event) {
 		if ( confirm( 'Are you sure?' ) ) {
 			return true;
 		} else {
@@ -130,7 +130,7 @@ bpc(document).ready( function() {
 	});
 
 	/* Try for auto-submit. */
-	bpc('#ucc_bpc_bulk_submit').live('click', function(event) {
+	bpc('#ucc_bpc_bulk_submit').on('click', function(event) {
 		event.preventDefault();
 		bpc('#ucc_bpc_bulk_autosubmit').val(1);
 		bpc('#bulk-form').submit();
