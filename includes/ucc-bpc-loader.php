@@ -14,7 +14,7 @@ class UCC_BuddyPress_Private_Checklist_Component extends BP_Component {
 			UCC_BPC_PLUGIN_DIR
 		);
 
-		$this->version = '2013090901';
+		$this->version = '20150225';
 
 		$this->includes();
 		$bp->active_components[$this->id] = (int) 1;
