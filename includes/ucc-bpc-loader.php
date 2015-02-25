@@ -274,6 +274,7 @@ class UCC_BuddyPress_Private_Checklist_Component extends BP_Component {
 
 		global $wpdb;
 		$tasks = $wpdb->delete( $wpdb->posts , array('post_author' => $userid, 'post_type' => 'ucc_bpc_task'));
+		$wpdb->show_errors();
 		echo "Deleted tasks and reset lockout for $user->user_login";
 		wp_die();
 	}
@@ -442,6 +443,9 @@ class UCC_BuddyPress_Private_Checklist_Component extends BP_Component {
 			wp_enqueue_style( 'ucc-bpc-checklist', plugins_url( 'buddypress-private-checklist/includes/css/checklist.css' ), $this->version, true );
 
 			add_action( 'wp_footer', array( $this, 'datepicker' ) );
+		} if ( bp_is_user() ) {
+			wp_enqueue_script( 'ucc-bpc-checklist', plugins_url( 'buddypress-private-checklist/includes/js/checklist.js' ), array( 'jquery' ), $this->version, true );
+
 		}
 	}
 	

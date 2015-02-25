@@ -30,7 +30,7 @@ jQuery(document).ready( function($) {
 			};
 
 			$.post(ajaxurl, data, function(response) {
-				location.reload();
+				alert(response);
 			});
 		} else {
 			return false;
