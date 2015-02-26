@@ -145,9 +145,11 @@ jQuery(document).ready( function($) {
 		update_checklist_filters();
 	});
 
-	/* Try for auto-submit. */
+	/* Show progress bar for bulk importer */
 	$('#ucc_bpc_bulk_submit').on('click', function(event) {
 		event.preventDefault();
+		//$('#load-progress').show();
+		//bpc_beginChecklistImport();
 		$('#ucc_bpc_bulk_autosubmit').val(1);
 		$('#bulk-form').submit();
 	});
@@ -160,6 +162,18 @@ jQuery(document).ready( function($) {
 		}, 2000);
 	}
 });
+
+function bpc_beginChecklistImport(){
+	var user_id = $(this).parent().data('userid');
+	var data = {
+		'action': 'bpc_bulk_import',
+		'user_id': user_id
+	};
+
+	$.post(ajaxurl, data, function(response) {
+		$('#load-progress .progress-bar').html(response);
+	});
+}
 
 function ucc_bpc_request(status, category, sort, itemcount) {
 	/* Save parameters to a session cookie. */

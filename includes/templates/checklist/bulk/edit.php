@@ -34,11 +34,19 @@
 			<input type="text" name="<?php ucc_bpc_bulk_date_field_name(); ?>" id="<?php ucc_bpc_bulk_date_field_name(); ?>" value="<?php echo esc_attr( $date ); ?>" />
 			<span><?php _e( 'mm/dd/YYYY', 'buddypress-private-checklist' ); ?></span>
 		</div><!-- #bulk-date -->
-
+		<div class="clearfix"></div>
 	<?php endif; ?>
 
 	</div><!-- #bulk-options -->
-
+	<div id="load-progress">
+		<h3>Import Progress</h3>
+		<div class="progress active progress-striped">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+		  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+		    Beginning import...
+		 	</div>
+		</div>
+	</div>
 	<?php wp_nonce_field( '_ucc_bpc_action_bulk' ); ?>
 
 	<?php do_action( 'ucc_bpc_after_bulk_form_content' ); ?>

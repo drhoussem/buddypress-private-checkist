@@ -162,6 +162,15 @@ a.cancel-email {
 	text-align: center;
 }
 
+#load-progress {
+	margin-top: 50px;
+	display: none;
+}
+
+#bulk-options {
+	position: relative;
+}
+
 #bulk-form {
 	margin: 10px;
 	position: relative;

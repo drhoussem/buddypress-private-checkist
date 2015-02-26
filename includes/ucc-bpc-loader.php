@@ -35,7 +35,6 @@ class UCC_BuddyPress_Private_Checklist_Component extends BP_Component {
 		// AJAX callbacks.
 		add_action( 'wp_ajax_nopriv_ucc-bpc-filter', array( $this, 'ajax_cb' ) );
 		add_action( 'wp_ajax_ucc-bpc-filter', array( $this, 'ajax_cb' ) );
-		add_action( 'wp_ajax_bpc-reset', array( $this, 'reset_callback' ) );
 
 		// Load appropriate scripts and styles.
 		if ( is_admin() ) {
@@ -66,6 +65,7 @@ class UCC_BuddyPress_Private_Checklist_Component extends BP_Component {
 			'includes/ucc-bpc-classes.php',
 			'includes/ucc-bpc-filters.php',
 			'includes/ucc-bpc-functions.php',
+			'includes/ucc-bpc-ajax.php',
 			'includes/ucc-bpc-screens.php',
 			'includes/ucc-bpc-template.php'
 		);
@@ -259,24 +259,6 @@ class UCC_BuddyPress_Private_Checklist_Component extends BP_Component {
 	public function ajax_cb() {
 		ucc_bp_locate_template( 'templates/checklist/checklist-loop.php', true, true, __FILE__ ); 
 		die();
-	}
-
-	//Ajax reset callback
-	public function reset_callback(){
-		$userid = intval( $_POST['user_id'] );
-		$user = get_userdata( $userid ) ;
-		if (empty($userid)) {
-			echo "No user ID passed";
-			wp_die();
-		}
-		delete_user_meta( $userid, '_ucc_bpc_action_bulk_timeout' );
-		delete_user_meta( $userid, '_ucc_bpc_action_bulk' );
-
-		global $wpdb;
-		$tasks = $wpdb->delete( $wpdb->posts , array('post_author' => $userid, 'post_type' => 'ucc_bpc_task'));
-		$wpdb->show_errors();
-		echo "Deleted tasks and reset lockout for $user->user_login";
-		wp_die();
 	}
 
 	
