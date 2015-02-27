@@ -29,7 +29,8 @@ class BPC_Ajax {
 	}
 
 	public function bulk_add_callback(){
-		echo "Bulk add started";
+		$result = ucc_bpc_action_bulk_process();
+		echo json_encode($result);
 		wp_die();
 	}
 }

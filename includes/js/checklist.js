@@ -148,32 +148,49 @@ jQuery(document).ready( function($) {
 	/* Show progress bar for bulk importer */
 	$('#ucc_bpc_bulk_submit').on('click', function(event) {
 		event.preventDefault();
-		//$('#load-progress').show();
-		//bpc_beginChecklistImport();
-		$('#ucc_bpc_bulk_autosubmit').val(1);
-		$('#bulk-form').submit();
+		$('#load-progress').show();
+		bpc_beginChecklistImport();
 	});
 
-	/* Auto-submit bulk form. */
-	var autosubmit = $('#ucc_bpc_bulk_autosubmit').val();
-	if (autosubmit > 0) {
-		setTimeout(function() {
-			$('#bulk-form').submit();
-		}, 2000);
-	}
+	
 });
 
 function bpc_beginChecklistImport(){
 	var user_id = $(this).parent().data('userid');
-	var data = {
-		'action': 'bpc_bulk_import',
-		'user_id': user_id
-	};
-
+	var data = $('#bulk-form').serializeObject();
+	data['action'] = 'bpc_bulk_import';
+	
 	$.post(ajaxurl, data, function(response) {
-		$('#load-progress .progress-bar').html(response);
-	});
+		response = JSON.parse(response);
+		if(response['error']) {
+			alert(response['error']);
+		} else {
+			$('#load-progress .progress-bar').css('width', response['percent_complete']+'%').attr('aria-valuenow', response['percent_complete']);
+			$( '#load-progress .progress-bar').html(response['percent_complete']+'%')
+			$('#ucc_bpc_bulk_offset').val(1 + response['offset']);
+			if(response['percent_complete'] < 100){
+				bpc_beginChecklistImport();
+			}
+		}
+	}); 
 }
+
+$.fn.serializeObject = function()
+{
+   var o = {};
+   var a = this.serializeArray();
+   $.each(a, function() {
+       if (o[this.name]) {
+           if (!o[this.name].push) {
+               o[this.name] = [o[this.name]];
+           }
+           o[this.name].push(this.value || '');
+       } else {
+           o[this.name] = this.value || '';
+       }
+   });
+   return o;
+};
 
 function ucc_bpc_request(status, category, sort, itemcount) {
 	/* Save parameters to a session cookie. */

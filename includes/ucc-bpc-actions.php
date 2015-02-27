@@ -162,13 +162,19 @@ add_action( 'bp_actions', 'ucc_bpc_action_delete' );
 
 if ( ! function_exists( 'ucc_bpc_action_bulk' ) ) {
 function ucc_bpc_action_bulk(){
-	$errors = ucc_bpc_action_bulk_process();
-	if(is_array($errors)) {
-		foreach ($errors as $error) {
-			bp_core_add_message( __( $error, 'buddypress-private-checklist' ) );
-		}
-		bp_core_redirect( user_trailingslashit( ucc_bpc_get_url() ) . '/bulk' );
-	}
+
+	// Do not proceed if user is not logged in, not viewing checklist, or action is not bulk.
+	if ( ! is_user_logged_in() || ! ucc_bpc_is_component() || ! bp_is_current_action( 'bulk' ) )
+		return;
+
+	if ( empty( $_REQUEST ) || ! isset( $_REQUEST['_wpnonce'] ) || ! isset( $_REQUEST['ucc_bpc_bulk_date'] ) )
+		return;
+
+	$result = ucc_bpc_action_bulk_process();
+	if($result['error']) {
+		bp_core_add_message( $result['error'] );
+		bp_core_redirect( user_trailingslashit( ucc_bpc_get_url() ) );
+	} 
 
 }
 
@@ -176,19 +182,11 @@ function ucc_bpc_action_bulk_process() {
 	global $bp, $current_user;
 
 
-
-	// Do not proceed if user is not logged in, not viewing checklist, or action is not bulk.
-	if ( ! is_user_logged_in() || ! ucc_bpc_is_component() || ! bp_is_current_action( 'bulk' ) )
-		return;
-
 	// Don't allow multiple bulk adds.
 	$user_has_added = get_user_meta( $current_user->ID, '_ucc_bpc_action_bulk', true );
 	if ( (int) $user_has_added > 1 ) {
-		return array('You have already bulk added tasks.');
+		return array('error' => __('You have already bulk added tasks.', 'buddypress-private-checklist' ));
 	}
-
-	if ( empty( $_REQUEST ) || ! isset( $_REQUEST['_wpnonce'] ) || ! isset( $_REQUEST['ucc_bpc_bulk_date'] ) )
-		return;
 
 	// Check the nonce.
 	check_admin_referer( '_ucc_bpc_action_bulk' );
@@ -198,7 +196,7 @@ function ucc_bpc_action_bulk_process() {
 	$timeout = apply_filters( 'ucc_bpc_action_bulk_timeout', 60 * 5 );
 	$now = time();
 	if ( $user_has_timeout && (int) $user_has_timeout + $timeout < $now ) {
-		return array( 'Your import has timed out. An import reset is required.');
+		return array( 'error' =>  __('Your import has timed out. An import reset is required.', 'buddypress-private-checklist' ));
 	}
 
 	// Is there a CSV available?
@@ -206,27 +204,41 @@ function ucc_bpc_action_bulk_process() {
 	if ( ! empty( $options ) && isset( $options['bulk_add_tasks'] ) )
 		$csv = $options['bulk_add_tasks'];
 	if ( empty( $csv ) ) {
-		return array( 'You cannot use the bulk add feature because no default tasks have been set.') ;
+		return array( 'error' =>  __('You cannot use the bulk add feature because no default tasks have been set.', 'buddypress-private-checklist' )) ;
 	}
 
 	// Make sure the date is valid.
 	$bulk_date = strtotime( $_REQUEST['ucc_bpc_bulk_date'] );
 
 	if ( ! $bulk_date ) {
-		return array( 'You need to set a valid date: mm/dd/YYYY.');
+		return array('error' =>   __('You need to set a valid date: mm/dd/YYYY.', 'buddypress-private-checklist' ));
 	}
 
 	$now = time();
 	if ( ( $bulk_date < strtotime( '+2 days' ) ) ) {
 		unset( $_REQUEST['ucc_bpc_bulk_date'] );
-		return array( 'You need to set a date that is in the future.');
+		return array('error' =>   __('You need to set a date that is in the future.', 'buddypress-private-checklist' ));
 		
 	}
 
+	$length = apply_filters( 'ucc_bpc_bulk_add_tasks_length', 5 );
+	$load_results = bpc_load_some_tasks($csv, $length, $bulk_date);
+	$task_count = $load_results["tasks_added"];
+
+	if ( empty( $task_count ) || $task_count < $length  ) {
+		update_user_meta( $current_user->ID, '_ucc_bpc_action_bulk', time() );
+		delete_user_meta( $current_user->ID, '_ucc_bpc_action_bulk_timeout' );
+	}
+
+	$load_results['percent_complete'] =  floor ( ( ($length * $load_results['offset'] + $task_count) / $load_results['tasks_total'] ) * 100);
+	return $load_results;
+} }
+add_action( 'bp_actions', 'ucc_bpc_action_bulk' );
+
+function bpc_load_some_tasks($csv, $length, $bulk_date){
 	$lines = str_getcsv( $csv, "\n" );
 
 	// Import N posts and loop to prevent memory/time issues.
-	$length = apply_filters( 'ucc_bpc_bulk_add_tasks_length', 20 );
 	$offset = (int) $_REQUEST['ucc_bpc_bulk_offset'];
 	$tasks = array_slice( $lines, $offset * $length, $length ); 
 	$count = count( $tasks );
@@ -237,11 +249,7 @@ function ucc_bpc_action_bulk_process() {
 
 		$first = $offset * $length + 1;
 		$last = $offset * $length + $count;
-		if ( isset( $_REQUEST[ucc_bpc_get_bulk_autosubmit_field_name()] ) && (int) $_REQUEST[ucc_bpc_get_bulk_autosubmit_field_name()] > 0 )
-			bp_core_add_message( sprintf( _n( '%1$d task added: #%2$d. Checking for more, please wait while the page refreshes.', '%1$d tasks added: #%2$d - #%3$d. Checking for more, please wait while the page refreshes.', $count, 'buddypress-private-checklist' ), $count, $first, $last ) );
-		else 
-			bp_core_add_message( sprintf( _n( '%1$d task added: #%2$d. If this page does not automatically refresh, click on the ', '%1$d tasks added: #%2$d - #%3$d. If this page does not automatically refresh, click on the ', $count, 'buddypress-private-checklist' ), $count, $first, $last ) . __( 'Bulk Add Tasks', 'buddypress-private-checklist' ) . __( ' button to continue adding tasks.', 'buddypress-private-checklist' ) );
-
+		
 		$author = $current_user->ID;
 
 		foreach ( $tasks as $task ) {
@@ -274,15 +282,10 @@ function ucc_bpc_action_bulk_process() {
 			update_post_meta( $task_id, '_ucc_bpc_task_date', $due_date );
 		}
 	}
-
-	if ( empty( $tasks ) || ( count( $tasks ) < $length ) ) {
-		update_user_meta( $current_user->ID, '_ucc_bpc_action_bulk', time() );
-		delete_user_meta( $current_user->ID, '_ucc_bpc_action_bulk_timeout' );
-		bp_core_add_message( sprintf( __( '%1$d tasks have been added to your checklist.', 'buddypress-private-checklist' ), count( $lines ) ) );
-		bp_core_redirect( user_trailingslashit( ucc_bpc_get_url() ) );
-	}
-} }
-add_action( 'bp_actions', 'ucc_bpc_action_bulk' );
+	$response = array('tasks_added' => sizeof($tasks), 'tasks_total' => sizeof($lines), 'offset' => $offset);
+	//return percent complete
+	return $response;
+}
 
 
 if ( ! function_exists( 'ucc_bpc_action_export' ) ) {
