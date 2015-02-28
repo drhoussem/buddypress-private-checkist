@@ -235,6 +235,9 @@ function ucc_bpc_action_bulk() {
 
 		$author = $current_user->ID;
 
+		//don't count terms after each insert
+ 		wp_defer_term_counting(true);
+
 		foreach ( $tasks as $task ) {
 			list( $time, $category, $status, $content ) = str_getcsv( $task, ',' );
 			$status = term_exists( $status, 'ucc_bpc_status' );
